@@ -513,6 +513,9 @@ class UpdateManager
         if ($extractTo)
             $extractTo .= '/'.str_replace('.', '/', $fileCode);
 
+        if(is_null($extractTo))
+            $extractTo = $this->baseDirectory;
+
         if (!file_exists($extractTo))
             mkdir($extractTo, 0777, TRUE);
 
